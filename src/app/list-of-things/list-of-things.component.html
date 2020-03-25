@@ -1,0 +1,17 @@
+<body >
+    <div class="table col-12 ">
+
+        <table class="table-dark dark col-12 "  >
+          <h1>Infos</h1>
+          <!-- <input type="text" placeholder="search bar" > -->
+          <ul  *ngFor="let item of myTab  ; let i = index" class="d-flex flex-row col-12">
+            <li class="col-2">{{item.userName}}</li>
+            <li class="col-2">{{item.firstName}}</li>
+            <li class="col-2">{{item.lastName}}</li>
+            <li class="col-2">{{item.email}}</li>
+            <li class="col-2">{{item.password}}</li>
+            <button mat-raised-button class="col-2" (click)="remove(i)" >delete</button>
+          </ul> 
+        </table>
+    </div>
+</body>

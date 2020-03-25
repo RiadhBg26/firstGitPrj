@@ -1,0 +1,13 @@
+body{
+    background-color: #585557;
+    display: flex;
+    justify-content: center;    
+    margin: 0px;
+}
+table{
+    margin: 0px;
+}
+li{
+    /* border: 1px solid white; */
+    list-style: none;
+}

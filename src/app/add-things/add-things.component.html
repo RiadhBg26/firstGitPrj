@@ -1,0 +1,49 @@
+<body >
+  <div class="container">
+    <div class="form-group pt-4 col-12" [formGroup]="myForm">
+        <mat-form-field class="ml-2" appearance="fill">
+          <mat-label>UserName</mat-label>
+          <input matInput  formControlName="userName">
+        </mat-form-field>
+
+        <mat-form-field class="ml-2" appearance="fill">
+          <mat-label>FirstName</mat-label>
+          <input matInput  formControlName="firstName">
+        </mat-form-field>
+        
+        <mat-form-field class="ml-2" appearance="fill">
+          <mat-label>LastName</mat-label>
+          <input matInput  formControlName="lastName">
+        </mat-form-field>
+
+        <mat-form-field class="ml-2" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput  formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="ml-2" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput  formControlName="password">
+        </mat-form-field>
+        
+        <div class="buttons">
+          <button mat-raised-button (click)='call()'>Update</button>
+        </div>
+    </div>
+    <!-- <div class="table col-12">
+      <table class="table-dark dark col-12" >
+        <h1>Infos</h1>
+        <ul  *ngFor="let item of myTab; let i = index" class="d-flex flex-row col-12">
+          <li class="col-2">{{item.userName}}</li>
+          <li class="col-2">{{item.firstName}}</li>
+          <li class="col-2">{{item.lastName}}</li>
+          <li class="col-2">{{item.email}}</li>
+          <li class="col-2">{{item.password}}</li>
+          <button mat-raised-button class="col-2" (click)="remove(i)" >delete</button>
+        </ul>
+        
+      </table>
+    </div> -->
+</div>
+
+</body>

@@ -1,0 +1,83 @@
+<body>
+    <!-- Material form register -->
+<mdb-card>
+
+  <mdb-card-header class="info-color white-text text-center py-4">
+    <h5>
+      <strong>Sign up</strong>
+    </h5>
+  </mdb-card-header>
+
+  <!--Card content-->
+  <mdb-card-body class="px-lg-5 pt-0">
+
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;" [formGroup] ="registerForm">
+
+      <div class="form-row">
+        <div class="col">
+          <!-- First name -->
+          <div class="md-form">
+            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput formControlName="firstName">
+            <label for="materialRegisterFormFirstName">First name</label>
+          </div>
+        </div>
+        <div class="col">
+          <!-- Last name -->
+          <div class="md-form">
+            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput formControlName="lastName">
+            <label for="materialRegisterFormLastName">Last name</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- E-mail -->
+      <div class="md-form mt-0">
+        <input type="email" id="materialRegisterFormEmail" class="form-control" mdbInput formControlName="email"
+        [ngClass]='{"has-error" : registerForm.get("email").errors}'>
+        <label for="materialRegisterFormEmail">E-mail</label>
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input type="text" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
+          mdbInput formControlName="password" [ngClass]='{"has-error" : registerForm.get("password").errors}'  >
+        <label for="materialRegisterFormPassword">Password</label>
+        <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+          At least 8 characters and 1 digit
+        </small> -->
+      </div>
+
+            <!--Confirm Password -->
+            <div class="md-form">
+              <input type="text" id="materialRegisterFormPassword" class="form-control" aria-describedby="materialRegisterFormPasswordHelpBlock"
+                mdbInput formControlName="confirmPassword"  >
+              <label for="materialRegisterFormPassword">Confirm Password</label>
+            </div>
+      <!-- Sign up button -->
+      <button mat-raised-button color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+        type="submit" (click)="userSave()"
+        [disabled]= "!registerForm.valid || registerForm.controls['confirmPassword'].value !== registerForm.controls['password'].value">Sign in</button>
+      <hr>
+      
+      <!-- EMail Help Block -->
+      <span class="help-block"*ngIf='registerForm.get("email").invalid' >
+        <span *ngIf="registerForm.get('email').errors?.pattern">special chars needed</span>
+        <span *ngIf="registerForm.get('email').errors?.required">email required</span>
+        <span *ngIf="registerForm.get('email').errors.email">email not valid</span>
+      </span> <br> <br>
+
+      <!--Password Help Block -->
+      <span class="help-block"*ngIf='registerForm.get("password").invalid' >
+        <span *ngIf="registerForm.get('password').errors?.pattern">special chars needed</span>
+        <!-- <span *ngIf="registerForm.get('password').errors?.required">password required</span> -->
+        <span *ngIf="registerForm.get('password').errors?.minlength">It must contain At least 8 characters</span>
+      </span> <br> <br>
+    </form>
+    <!-- Form -->
+
+  </mdb-card-body>
+
+</mdb-card>
+<!-- Material form register -->
+</body>

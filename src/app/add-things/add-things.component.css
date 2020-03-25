@@ -1,0 +1,13 @@
+body {
+    background-color: #585557;
+    display: flex;
+    justify-content: center;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+li{
+    /* border: 1px solid white; */
+    list-style: none;
+}

@@ -1,0 +1,51 @@
+<body>
+
+<!-- Material form login -->
+<mdb-card>
+
+    <mdb-card-header class="info-color white-text text-center py-4">
+      <h5>
+        <strong>Sign in</strong>
+      </h5>
+    </mdb-card-header>
+  
+  
+    <!--Card content-->
+    <mdb-card-body class="px-lg-5 pt-0">
+  
+      <!-- Form -->
+      <form class="text-center" style="color: #757575;" [formGroup]="loginForm">
+  
+        <!-- Email -->
+        <div class="md-form"> 
+          <input type="email" id="materialLoginFormEmail" class="form-control " color="info" madbnput formControlName="loginMail">
+          <label for="materialLoginFormEmail">E-mail</label>
+        </div>
+  
+        <!-- Password -->
+        <div class="md-form">
+          <input type="text" id="materialLoginFormPassword" class="form-control" mdbInput formControlName="loginPass">
+          <label for="materialLoginFormPassword">Password</label>
+        </div>
+  
+
+  
+        <!-- Sign in button -->
+        <button mat-raised-button color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect
+          type="submit" (click)="userGet()">Sign in</button>
+  
+        <!-- Register -->
+        <p>Not a member?
+          <a class="nav-link" routerLink='/register'>Register</a>
+        </p>
+
+  
+      </form>
+      <!-- Form -->
+  
+    </mdb-card-body>
+  
+  </mdb-card>
+  <!-- Material form login -->
+
+</body>
